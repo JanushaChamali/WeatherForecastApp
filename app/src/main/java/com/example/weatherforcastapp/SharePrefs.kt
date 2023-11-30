@@ -38,16 +38,17 @@ class SharePrefs internal constructor(private val context: Context){
         if (key!=null && value!=null){
             prefs.edit().putString(key,value).apply()
         }
-       //return null
+        //return null
     }
-    fun setValueOrNull(key: String?) : String?{
+    fun getValueOrNull(key: String?) : String?{
         if (key!=null){
             return prefs.getString(key,null)
         }
         return null
 
-     fun clearCityValue(){
-         prefs.edit().remove(KEY_CITY).apply()
+    }
 
-     }     }
+    fun clearCityValue() {
+        prefs.edit().remove(KEY_CITY).apply()
+    }
 }

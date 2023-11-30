@@ -9,16 +9,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.WeatherForecastaApp.WeatherList
 import com.example.weatherforcastapp.R
+
 import java.text.SimpleDateFormat
 import java.util.Calendar
 
 
 class WeatherToday:RecyclerView.Adapter<TodayHolder>() {
-    private var listOfTodayWeather = ListOf<WeatherList>()
+    private var listOfTodayWeather = listOf<WeatherList>()
 
     @Override override fun onCreateViewHolder(parent: ViewGroup, veiwType: Int): TodayHolder {
         val view =
@@ -33,7 +33,7 @@ class WeatherToday:RecyclerView.Adapter<TodayHolder>() {
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: TodayHolder, position: Int) {
-        val todayForeCast = listOfTodayWeather(position)
+        val todayForeCast = listOfTodayWeather[position]
 
         holder.timeDisplay.text = todayForeCast.dtTxt!!.substring(11, 16).toString()
 
@@ -41,7 +41,7 @@ class WeatherToday:RecyclerView.Adapter<TodayHolder>() {
         val temperatureCelsius = (temperatureFahrenheit?.minus(273.15))
         val temperatureFormatted = String.format("%.2f", temperatureCelsius)
 
-        holder.temDisplay.text = "$temperatureFormatted C"
+        holder.tempDisplay.text = "$temperatureFormatted C"
 
         val calendar = Calendar.getInstance()
 
@@ -49,7 +49,7 @@ class WeatherToday:RecyclerView.Adapter<TodayHolder>() {
         val dateFormat = SimpleDateFormat("HH::mm")
         val formattedTime = dateFormat.format(calendar.time)
 
-        val timeofapi = todayForeCast.dxTxt!!.split("")
+        val timeofapi = todayForeCast.dtTxt!!.split("")
         val partafterspace = timeofapi[1]
 
         Log.e("time", "formatted time:${formattedTime}, timeofapi: ${partafterspace}")
@@ -84,7 +84,7 @@ class WeatherToday:RecyclerView.Adapter<TodayHolder>() {
                 holder.imageDisplay.setImageResource(R.drawable.ninedn)
             }
             if (i.icon == "11d" || i.icon == "11n") {
-                holder.imageDisplay.setImageResource(R.drawable.eleved)
+                holder.imageDisplay.setImageResource(R.drawable.elevend)
             }
             if (i.icon == "13d" || i.icon == "13n") {
                 holder.imageDisplay.setImageResource(R.drawable.thirteend)

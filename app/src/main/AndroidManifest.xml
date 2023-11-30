@@ -22,7 +22,7 @@
         android:theme="@style/Theme.WeatherForcastApp"
         tools:targetApi="31">
         <activity
-            android:name=".ForecastActivity"
+            android:name=".ForeCastActivity"
             android:exported="false" />
         
         <activity

@@ -22,6 +22,7 @@ import com.example.WeatherForecastaApp.WeatherList
 import com.example.weatherforcastapp.adapter.WeatherToday
 import com.example.weatherforcastapp.databinding.ActivityMainBinding
 import com.example.weatherforcastapp.mvvm.WeatherVm
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -72,13 +73,18 @@ class MainActivity : AppCompatActivity() {
             binding.humidityMain.text = it.main!!.humidity.toString()
             binding.windspeed.text = it.wind?.speed.toString()
 
-            val inputFormat = SimpleDateFormat("yyyy-mm-dd  HH-mm", Locale.getDefault())
-            val date = inputFormat.parse(it.dtTxt!!)
-            val outputFormat = SimpleDateFormat("d MMMM EEEE", Locale.getDefault())
-            val dateanddayname = outputFormat.format(date!!)
+            try{
+                val inputFormat = SimpleDateFormat("yyyy-mm-dd  HH:mm", Locale.getDefault())
+                val date = inputFormat.parse(it.dtTxt!!)
+                val outputFormat = SimpleDateFormat("d MMMM EEEE", Locale.getDefault())
+                val dateanddayname = outputFormat.format(date!!)
+                binding.dateDayMain.text = dateanddayname
+                binding.chanceofrain.text = "${it.pop.toString()}%"
+            }
 
-            binding.dateDayMain.text = dateanddayname
-            binding.chanceofrain.text = "${it.pop.toString()}%"
+            catch (e: ParseException){
+
+            }
 
             for (i in it.weather) {
                 if (i.icon == "0id") {

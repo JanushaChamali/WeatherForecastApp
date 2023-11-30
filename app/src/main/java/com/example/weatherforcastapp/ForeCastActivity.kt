@@ -11,6 +11,7 @@ import com.example.WeatherForecastaApp.WeatherList
 import com.example.weatherforcastapp.adapter.ForeCastAdapter
 import com.example.weatherforcastapp.mvvm.WeatherVm
 
+
 class ForeCastActivity : AppCompatActivity() {
 
     private lateinit var adaptreForeCastAdapter: ForeCastAdapter

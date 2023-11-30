@@ -30,7 +30,7 @@
                     android:backgroundTint="#80A9A9A9"
                     android:layout_margin="16dp"
                     app:cardElevation="20dp">
-                    style="@style/CustomerCardViewStyle">
+                    <!--style="@style/CustomerCardViewStyle">-->
 
 
                     <LinearLayout
@@ -214,7 +214,7 @@
                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/materialCard"
+                    android:layout_below="@+id/materialcard"
                     android:layout_marginTop="10dp"
                     android:orientation="vertical">
                    <LinearLayout
@@ -235,7 +235,7 @@
                            android:layout_height="wrap_content"
                            android:id="@+id/next5Days"
                            android:drawablePadding="6dp"
-                           android:text="5 Days"
+                           android:text="5 Days>"
                            android:layout_marginRight="10dp"
                            android:textColor="@color/white"
                            android:textSize="16sp"

@@ -87,7 +87,7 @@
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:background="@android:color/white" />
             <!--column 2-->
@@ -121,7 +121,7 @@
         </LinearLayout>
         <View
             android:layout_width="1dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:background="@android:color/white"/>
 
@@ -157,11 +157,7 @@
                 android:textColor="@android:color/white"/>
 
         </LinearLayout>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:background="@android:color/white"/>
+
         </LinearLayout>
 
     </RelativeLayout>

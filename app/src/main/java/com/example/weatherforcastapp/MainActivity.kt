@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         vm.closetorexactlysameweatherdate.observe(this, Observer {
             val temperatureFahrenheit = it!!.main?.temp
             val temperatureCelsius = (temperatureFahrenheit?.minus(273.15))
-            val temperatureFormatted = String.format("% 2f", temperatureCelsius)
+            val temperatureFormatted = String.format("% .2f", temperatureCelsius)
 
             for (i in it.weather) {
                 binding.descMain.text = i.description
